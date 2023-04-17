@@ -5,19 +5,19 @@ import java.util.Arrays;
 import java.io.FileWriter;  
 
 
-public class lab7_code {
+public class lab7 {
     public static Double mean_arr(Double[] arr) {
         Double arr_count = 0.0;
         for (int i = 0; i < arr.length; i++) {  
-            arr_count += arr[i];                // Counting the sum of the array
+            arr_count += arr[i];                
         }
-        return  arr_count / arr.length;   // Finding mean by dividing sum with length
+        return  arr_count / arr.length;   
     
   }
 
   public static Double median_arr(Double[] arr) {
     Arrays.sort(arr);
-    int mid = arr.length / 2;  // Finding the middle element
+    int mid = arr.length / 2;  
         if(arr.length % 2 == 0) {
             return  (arr[mid - 1] + arr[mid]) / 2; // If the number of elements are even then formula is arr[mid - 1] + arr[mid]) / 2
         } else {
@@ -69,14 +69,13 @@ public class lab7_code {
         for(int i =0;i<arr.length;i++){
             int count = 0;
             for (int j = 0; j < arr.length; j++) {
-                if (arr[j] == arr[i]) { // getting the count of every number in the array.
+                if (arr[j] == arr[i]) { 
                     count++;
                 }
             }
             if(count>max_occur){
                 max_occur = count;
-                mode = arr[i];      // Assigning mode if the count is greater than maximum occur of a particular element
-                
+                mode = arr[i];                      
     
             }
         }
@@ -118,11 +117,11 @@ public class lab7_code {
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
             int rowIndex = 0;
-            while ((line = br.readLine()) != null && rowIndex < numRows) {   // Reading all the rows
-                String[] values = line.split(csvDelimiter);                 // Splitting every row by ","
+            while ((line = br.readLine()) != null && rowIndex < numRows) {   
+                String[] values = line.split(csvDelimiter);                 
                 if (values.length >= numCols) {
                     for (int colIndex = 0; colIndex < numCols; colIndex++) {
-                        data[rowIndex][colIndex] = values[colIndex];           // Initialising the splitted elements into 2d array
+                        data[rowIndex][colIndex] = values[colIndex];           
                     }
                     rowIndex++;
                 }
